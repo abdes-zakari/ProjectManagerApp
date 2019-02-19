@@ -1,6 +1,6 @@
 # ProjectManger
 
-Application Angular API <a href='https://abdes-zakari.github.io/ProjectManager/'>DEMO</a>
+Application Angular API <a href='https://abdes-zakari.github.io/ProjectManager/'>DEMO using Localstorage</a>
 
 ## Development server
 
