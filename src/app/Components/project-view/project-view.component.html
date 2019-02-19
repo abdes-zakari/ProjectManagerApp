@@ -1,0 +1,131 @@
+
+<div class="ui grid stackable" style="border:0px solid red">
+
+
+      <div class="four wide column" style="border:0px solid blue" *ngFor="let project of projects">
+        <div class="ui card cardo" href="http://www.dog.com">
+          <div class="content">
+            <div class="header" routerLink="/task/{{project.id}}">{{project.project }}</div>
+            <div class="meta">
+              <span class="category"><!-- PHP --> </span>
+            </div>
+            <div class="description">
+              <p>{{ (project.description.length>80)? (project.description | slice:0:80)+'. . . ':(project.description) }}</p>
+            </div>
+            <div class="flex-container">
+                <div class="flex-child"><i class="fas fa-calendar-alt" style="font-size:18px"></i> {{project.deadline }}</div>
+                 <div class="flex-child"><i class=" far fa-clock" style="font-size:18px"></i> {{formatWorkedTime(project) }}<b>/{{project.duration }}</b> Hours </div>
+              </div>
+            <br>
+            <div class="progbar-flex-container">
+                <div class="progbar" style="width: 400px;">
+                  <div class="progbar-child" [style.width.%]="getPercent(project)"  ></div>
+                </div>
+                <div class="progbar-text">{{ getPercent(project) }}%</div>
+             </div>
+          </div>
+          <div class="extra content">
+            <div class="right floated author">
+              <!-- <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt -->
+<div class="menu-btn">
+  <i (click)="toggleMenuBottom(project.id)" class="menu-action fas fa-ellipsis-v" style="font-size:18px"></i>
+  <div id="Dropdown{{project.id}}" class="menu-btn-content">
+    <a (click)="deleteProject(project)">Delete</a>
+    <a routerLink="/task/{{project.id}}">Edit</a>
+  </div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--             <div class="four wide column" style="border:0px solid blue">
+        <div class="ui card cardo" href="http://www.dog.com">
+          <div class="content">
+            <div class="header" >Project React-Electron</div>
+            <div class="meta">
+              <span class="category">PHP</span>
+            </div>
+            <div class="description">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+            </div>
+            <div class="flex-container">
+                <div class="flex-child"><i class="fas fa-calendar-alt" style="font-size:18px"></i> 20 Feb 2019</div>
+                 <div class="flex-child"><i class=" far fa-clock" style="font-size:18px"></i> 22<b>/67</b> Hours </div>
+              </div>
+            <br>
+            <div class="progbar-flex-container">
+                <div class="progbar" style="width: 400px;">
+                  <div class="progbar-child" style="width: 39%;"></div>
+                </div>
+                <div class="progbar-text">39%</div>
+             </div>
+          </div>
+          <div class="extra content">
+            <div class="right floated author">
+               <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt 
+              <div class="menu-btn">
+  <i onclick="myFunction('myDropdown2')" class="menu-action fas fa-ellipsis-v" style="font-size:18px"></i>
+  <div id="myDropdown2" class="menu-btn-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+
+
+
+
+
+
+
+<!--New Project Modal -->
+  <div class="ui modal new-project-modal" style="width: 700px;">
+  <i class="close icon"></i>
+  <div class="header">
+    New Project
+  </div>
+  
+  <div class="content">
+  	<div class="ui green message" *ngIf="successMsg">
+       <div class="header">
+         {{ successMsg }}
+       </div>
+   </div>
+
+
+  <form [formGroup]="addFormProject"  class="ui form" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label>Project Name</label>
+    <input type="text" formControlName="project"  name="project-name" placeholder="Project Name">
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <div class="field">
+    <label>Deadline</label>
+    <input type="date" formControlName="deadline" name="deadline-project">
+  </div>
+  <button class="ui button"  style="background-color: #84ab3b;color:#FFF">Save</button>
+
+    
+</form>
+
+  </div>
+<!--   <div class="actions">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div> -->
+</div>

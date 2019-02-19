@@ -1,0 +1,119 @@
+<div class="flex-task" *ngIf="project">
+
+<div class="flex-task-child" style="width: 700px">
+	<h2>Project: {{ project.project}} </h2>
+	<p>
+		{{ project.description}}
+	</p>
+</div>
+
+
+<div class="flex-task-child">
+    <h2>Tasks </h2>
+<table class="ui very basic table" style="width: 90%;">
+  <thead>
+    <tr>
+    <th>id</th>
+    <th>Task</th>
+    <th>Description</th>
+    <th>Duration</th>
+    <th>Timer</th>
+    <th>Status</th>
+    <th style="text-align: center;">Action</th>
+  </tr></thead>
+  <tbody>
+  	
+  	<tr *ngFor="let task of project.tasks">
+      <td data-label="Name">{{task.id}}</td>
+      <td data-label="Age">{{task.name}}</td>
+      <td data-label="Age">{{task.description}}</td>
+      <td data-label="Job">{{task.duration}} Hours</td>
+      <td data-label="Job"><app-countdown [task]="task"></app-countdown></td>
+      <td><div style="padding-left:10%" [innerHtml]=handleStatusTask2(task)></div></td>
+      <td >
+      	  <div class="flex-action-task" >
+      	     <div class="flex-child-action-task" title="Edit Task">
+      	     	<i class="fas fa-edit"   (click)="getEditTask(task)"  onclick="editTaskModal()" style='font-size:16px;color: #84ab3b'></i>
+      	     </div>
+      	     <div class="flex-child-action-task" title="Delete Task">
+      	     	<i class="fas fa-trash-alt" (click)="deleteTask(task)" style='font-size:16px;color: #84ab3b'></i>
+      	     </div>
+      	  </div>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+<!--New Task Modal -->
+  <div class="ui modal new-task-modal" style="width: 700px;">
+  <i class="close icon"></i>
+  <div class="header">
+    New Task
+  </div>
+  <div class="content">
+
+   <!-- <form class="ui form"> -->
+<form [formGroup]="addFormTask"  class="ui form" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label>Task</label>
+    <input type="text" formControlName="name" name="task-name" placeholder="Task ">
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <input type="text" formControlName="description" name="task-desc" placeholder="Description " >
+  </div>
+  <div class="field">
+    <label>Duration in hours</label>
+    <input type="text" formControlName="duration" name="duration-project" placeholder="Example: 20">
+  </div>
+  
+  <button class="ui button" style="background-color: #84ab3b;color:#FFF">Save</button>
+</form>
+
+  </div>
+
+</div>
+
+
+
+
+<!--Edit Task Modal -->
+  <div class="ui modal edit-task-modal" style="width: 700px;">
+  <i class="close icon"></i>
+  <div class="header">
+    Edit Task
+  </div>
+  <div class="content">
+
+   <!-- <form class="ui form"> -->
+<form [formGroup]="editFormTask"  class="ui form" (ngSubmit)="updateTask()">
+  <div class="field">
+    <label>Task</label>
+    <input type="text" formControlName="name" name="task-name" >
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <input type="text" formControlName="description" name="task-desc" >
+  </div>
+  <div class="field">
+    <label>Duration in hours</label>
+    <input type="text" formControlName="duration" name="duration-project" >
+  </div>
+  <button class="ui button" style="background-color: #84ab3b;color:#FFF">Save</button>
+</form>
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+
+</div>

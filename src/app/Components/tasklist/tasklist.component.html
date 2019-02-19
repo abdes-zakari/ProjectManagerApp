@@ -1,0 +1,21 @@
+<div>
+	<h2>All Tasks </h2>
+<table class="ui very basic table" style="width: 90%;">
+  <thead>
+    <tr>
+    <th>id</th>
+    <th>Task</th>
+    <th>Duration</th>
+    <th>Timer</th>
+  </tr></thead>
+  <tbody>
+  	
+  	<tr *ngFor="let task of tasks">
+      <td data-label="Name">{{task.id}}</td>
+      <td data-label="Age">{{task.name}}</td>
+      <td data-label="Job">{{task.duration}} Hours</td>
+      <td data-label="Job"><app-countdown [task]="task"></app-countdown></td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,16 @@
+<div>
+
+	 <span  [style.color] = "_taskStatus == 1 ? 'red' : '#000'">
+	  {{ padNumber(_hours) }}:{{ padNumber(_minutes) }}:{{ padNumber(_seconds) }}
+	</span>
+
+
+	 <span class="btn-ctn" *ngIf="btnStart"><i class="fas fa-play-circle" (click)="startTimer()"></i></span>
+
+	 <span class="btn-ctn" *ngIf="btnStop"><i class="fas fa-stop-circle" (click)="stopTimer()"></i></span>
+	 <!-- <button (click)="test()" [disabled]="btnStop">Test</button> -->
+
+	 <!-- <button [disabled]="myBtn" >Hello</button> -->
+	 <!-- <button (click)="enableDisbale()">Toggle</button> -->
+
+</div>

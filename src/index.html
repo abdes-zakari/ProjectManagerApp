@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ProjectManger</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <style type="text/css">
+            .manu{
+        margin-left: 84px !important;
+
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12)!important;
+      }
+
+      .sido{
+            background-color: #84ab3b !important;
+      }
+      
+      .main-ctn{
+        margin-left: 130px;
+      }
+
+      .ui.card{
+        width: 330px;
+      }
+.ui.grid{
+      margin-top: 1rem;
+}
+
+/*.ui.form textarea:focus {*/
+.ui.form input[type=text]:focus, .ui.form input[type=date]:focus, .ui.form textarea:focus {
+
+    border-color: #84ab3b;
+  }
+
+
+      .cardo{
+ border-radius: 6px!important;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.4)!important;
+    background-color: #ffffff!important;
+    
+    /*border: solid 1px #e6e6e6!important;*/
+
+      }
+      .description{
+        height: 40px;
+      }
+
+      .flex-container {
+  display: flex;
+  /*background-color: DodgerBlue;*/
+}
+
+.flex-child{
+  /*background-color: #f1f1f1;*/
+  /*margin: 10px;*/
+  /*border: solid 1px red !important;*/
+  padding: 5px;
+  /*font-size: 30px;*/
+}
+     
+
+
+.progbar { 
+  height: 6px;
+  position: relative;
+  background: #DCE0E3;
+border-radius: 8px;
+float:left;
+margin-top:4px;
+/*border:1px solid red;*/
+}
+
+.progbar-child{
+  display: block;
+  height: 100%;
+     -webkit-border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+         -moz-border-radius-topright: 8px;
+      -moz-border-radius-bottomright: 8px;
+             border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+      -webkit-border-top-left-radius: 20px;
+   -webkit-border-bottom-left-radius: 20px;
+          -moz-border-radius-topleft: 20px;
+       -moz-border-radius-bottomleft: 20px;
+              border-top-left-radius: 20px;
+           border-bottom-left-radius: 20px;
+  background-color: #fc8c5c;
+  position: relative;
+  overflow: hidden;
+}
+.progbar-text{
+ margin-left: 10px;
+}
+.progbar-flex-container {
+  display: flex;
+}
+
+.header{
+  color: #84ab3b !important;
+  cursor: pointer;
+}
+
+.menu-action {
+  cursor: pointer;
+}
+
+
+.menu-btn {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-btn-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu-btn-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.show {display: block;}
+
+.true-status{
+  font-size:20px;
+  color: #339933
+}
+
+.progress-status{
+  font-size:20px;
+  color: #fc8c5c
+}
+
+
+.false-status{
+  font-size:20px;
+  color: #DCE0E3
+}
+
+
+.flex-action-task{
+  display: flex;
+  /*border: 1px solid red;*/
+  justify-content: center;
+}
+
+ .flex-child-action-task{
+  margin: 2px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.flex-task {
+  display: flex;
+}
+
+.flex-task-child{
+  margin: 50px;
+  width: 100%;
+}
+
+.btn-ctn{
+  cursor: pointer;
+  margin: 10px;
+  /*border: 1px solid red;*/
+  color: #84ab3b;
+  font-size: 20px
+}
+
+
+    </style>
+
+</head>
+<body>
+  <app-root></app-root>
+
+  
+</body>
+</html>

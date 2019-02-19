@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\": "Database/"
+        }
+    },
+    "require": {
+        "smarty/smarty": "^3.1"
+    }
+}

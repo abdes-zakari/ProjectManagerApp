@@ -1,0 +1,61 @@
+
+<div class="ui secondary huge menu manu">
+  <div class="item " *ngIf="router.url === '/'">
+    <button class="ui button" onclick="newProjectModal()" (click)="clickNewProjectModal()" style="background-color: #84ab3b;color:#FFF; font-size: 13px; ">
+  + New Project
+</button>
+  </div>
+  <div class="item " *ngIf="router.url.includes('task')">
+     <button class="ui button"  style="background-color: #84ab3b;color:#FFF; font-size: 13px; " routerLink="/">
+     <i class='fas fa-chevron-circle-left'   style='font-size:13px;color: #FFF'></i>  Back 
+</button>
+  </div>
+   <div class="item " *ngIf="router.url.includes('task')">
+     <button class="ui button" onclick="newTaskModal()" style="background-color: #84ab3b;color:#FFF; font-size: 13px; ">
+   <i class='fas fa-plus' style='font-size:13px;color: #FFF'></i>  New Task
+</button>
+  </div>
+
+  
+
+
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input" data-children-count="1">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+    <a class="ui item">
+      John Doe
+    </a>
+  </div>
+</div>
+
+
+ <div class="ui visible left demo vertical inverted sidebar labeled icon menu sido">
+  <a class="item">
+    <i class="home icon" routerLink="/"></i>
+    Home
+  </a>
+  <a class="item" routerLink="/">
+    <i class="block layout icon"></i>
+    Projects
+  </a>
+  <a class="item" routerLink="/tasks">
+    <i class="tasks  icon"></i>
+    Tasks
+  </a>
+</div>
+  <div class="main-ctn">
+    
+
+
+        <router-outlet></router-outlet>
+
+
+  </div>
+
+
+
+
