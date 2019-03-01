@@ -5,6 +5,9 @@ Application Angular API <a href='https://abdes-zakari.github.io/ProjectManager/'
 ### Dependencies
 - PHP 
 - Nodejs
+
+Data will be stored in /rest/api/Database/projectmanager.db (Sqlite)
+
 ### Installation 
  Run the following commands:
  
