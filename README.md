@@ -2,6 +2,18 @@
 
 Application Angular API <a href='https://abdes-zakari.github.io/ProjectManager/'>DEMO using Localstorage</a>
 
+### Dependencies
+- PHP 
+- Nodejs
+### Installation 
+ Run the following commands:
+ 
+ `git clone https://github.com/abdes-zakari/ProjectManagerApp.git`
+ 
+ `cd ProjectManagerApp`
+ 
+ `npm install`
+ 
 ## Development server
 
 Run `npm run start-app` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
